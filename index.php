@@ -6,7 +6,7 @@ include("./components/header.php");
 
 <div class="index-banner">
   <?php
-  if(!isset($_SESSION['username'])) {
+    if(!isset($_SESSION['username'])) {
   ?>
   <h1 class="banner-title">JTA Travel</h1>
   <?php 
@@ -39,7 +39,7 @@ include("./components/header.php");
 </div>
 
 <?php
-    $query = "SELECT * FROM top6";
+    $query = "SELECT * FROM reizen";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {

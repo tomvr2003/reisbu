@@ -31,6 +31,7 @@ use LDAP\Result;
 
                     if ($result) {
                         $_SESSION["username"] = $result["username"];
+                        $_SESSION["isadmin"] = $result ["isadmin"];
                         $_SESSION["email"] = $result["email"];
                         header("Location: ./index.php");
                     } else {

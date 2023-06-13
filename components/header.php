@@ -18,12 +18,20 @@ require_once('connection.php');
   </div>
   <div class="header-right">
     <?php
-      if (!isset($_SESSION["username"])) { 
-        echo "<a href='./login.php'><button>Login</button></a>";
-      } else {
+      if (!isset($_SESSION["username"])) {
+        if(!isset($_SESSION['adminusername'])) {
+          echo "<a href='./login.php'><button>Login</button></a>";
+        }
+        else if (isset($_SESSION['adminusername'])) {
+          echo "<a href='./components/logout.php'><button>Logout</button></a>";
+        }
+      } 
+      else if (isset($_SESSION['username'])) {
         echo "<a href='./account.php'><button>Account</button></a>";
         echo "<a href='./components/logout.php'><button>Logout</button></a>";
-
+        if($_SESSION['isadmin'] == 1) { 
+          echo "<a href='./adminpanel.php'><button>Admin panel</button></a>";
+        }
       }
     ?>
   </div>
