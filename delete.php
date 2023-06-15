@@ -9,7 +9,7 @@
         }
     } else {
         echo '<script type="text/javascript">';
-        echo 'if(confirm("Weet je zeker dat je dit gerecht wilt verwijderen?")){';
+        echo 'if(confirm("Weet je zeker dat je deze reis wilt verwijderen?")){';
         echo 'window.location.href="delete.php?id=' . $id . '&confirm=yes";';
         echo '} else {';
           echo 'window.location.href="adminpanel.php"';

@@ -45,7 +45,7 @@ include("./components/header.php");
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 ?>
 <div id="top-6">
-    <div class="top-6-boxes-container">
+    <div class="top-6-boxes-container" style="margin-bottom: 50px;">
         <div class="top-6-box">
             <div class="top-6-box-left">
                 <img src="<?php echo $row["image"]; ?>" alt="place" class="top-6-img">
@@ -67,7 +67,7 @@ include("./components/header.php");
             </div>
         </div>
     </div>
-    </div>
+</div>
 
     <?php 
       }

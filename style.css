@@ -192,7 +192,7 @@ input:focus {
   justify-content: top;
   align-items: center;
   flex-direction: column;
-  height: 28vh;
+  height: 23vh;
 }
 
 .top-6-box {
@@ -201,6 +201,13 @@ input:focus {
   display: flex;
   background-color: #e4e4e4;
   border-radius: 5px;
+  cursor: pointer;
+  transition: all ease 200ms;
+}
+
+.top-6-box:hover {
+  height: 225px;
+  width: 755px;
 }
 
 .top-6-box-left {
@@ -297,7 +304,7 @@ input:focus {
 /* Admin panel */
 
 .adminpanel-button {
-  background-color: #428bca;
+  background-color: #7189FF;
 }
 
 .add-reis-container{
@@ -318,7 +325,7 @@ input:focus {
 
 .rwd-table tr:first-child {
   border-top: none;
-  background: #428bca;
+  background: #7189FF;
   color: #fff;
 }
 
@@ -424,5 +431,82 @@ td{
   height: 90vh;
   flex-direction: column;
   gap: 50px;
+}
+
+/* Reispagina */
+
+.reispagina-container {
+  height: 90vh;
+  display: flex;
+}
+
+.reispagina-container-left {
+  flex: 7;
+}
+
+.reispagina-container-right {
+  flex: 6;
+  padding: 100px 100px 100px 200px;
+}
+
+.reispagina-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.reispagina-container-right-1 {
+  display: flex;
+  height: 10vh;
+}
+
+.reispagina-container-right-2 {
+}
+
+.reispagina-container-right-3 {
+  height: 10vh;
+}
+
+.reispagina-container-right-4 {
+  height: 10vh;
+}
+
+.reispagina-container-right-5 {
+  height: 15vh;
+}
+
+.reispagina-container-right-6 {
+  height: 11vh;
+}
+
+.reispagina-container-right-7 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fa-s-2 {
+  font-size: 20px;
+}
+
+.star-text-reispagina {
+  font-size: 22px;
+}
+
+.fa-m-2 {
+  color: #7189FF;
+  font-size: 40px;
+  margin: -7px 0 0 400px;
+}
+
+.rating-6-reispagina {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0px 0 0 -33px;
+  color: #FFF;
+}
+
+.reispagina-button {
+  padding: 12px 30px;
+  background-color: #7189FF;
 }
 
