@@ -33,13 +33,29 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
             <h6 style="font-weight: 500;" class="top-6-des"><?php echo $row["reisinfo"]; ?></h6>
         </div>
         <div class="reispagina-container-right-5">
-            <input type="date">
+            <input type="date" min="2023-06-23" max="2024-06-23" required>
         </div>
         <div class="reispagina-container-right-6">
             <button class="reispagina-button">Boeken</button>
         </div>
         <div class="reispagina-container-right-7">
-            <h4 style="font-size: 40px;" class="top-6-title"><?php echo $row["prijs"]; ?>,-</h4>
+            <h4 style="font-size: 40px;" class="top-6-title"><?php echo "€ " . $row["prijs"]; ?>,-</h4>
+        </div>
+    </div>
+</div>
+
+<div class="recensies-container">
+    <div class="recensies-top">
+        <button class="recensie-button">Schrijf een recensie!</button>
+    </div>
+    <div class="recensies-bottom">
+        <div class="recensies-bottom-con">
+            <div class="recensie-bottom-con-top">
+                <h1>Tom</h1>
+                <h1 style="color: #7189FF;">9.5</h1>
+            </div>
+            <p class="recensie-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="blue-line"></div>
         </div>
     </div>
 </div>

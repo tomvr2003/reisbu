@@ -9,9 +9,10 @@ if (isset($_POST["submit_button"])) {
     $reisinfo = $_POST["reisinfo"];
     $star = $_POST["star"];
     $rating = $_POST["rating"];
+    $prijs = $_POST["prijs"];
     $image = $_POST["image"];
 
-    $sql = "INSERT INTO reizen (title, omschrijving, reisinfo, star, rating, image) VALUES (:title, :omschrijving, :reisinfo, :star, :rating, :image)";
+    $sql = "INSERT INTO reizen (title, omschrijving, reisinfo, star, rating, prijs, image) VALUES (:title, :omschrijving, :reisinfo, :star, :rating, :prijs, :image)";
     $statement = $conn->prepare($sql);
     $statement->execute([
         ":title" => $title,
@@ -19,6 +20,7 @@ if (isset($_POST["submit_button"])) {
         ":reisinfo" => $reisinfo,
         ":star" => $star,
         ":rating" => $rating,
+        ":prijs" => $prijs,
         ":image" => $image
     ]);
 
@@ -35,8 +37,9 @@ if (isset($_POST["submit_button"])) {
       <input type="text" name="reisinfo" placeholder="Voeg reisinfo toe...">
       <input type="text" name="star" placeholder="Voeg een star toe...">
       <input type="text" name="rating" placeholder="Voeg een rating toe...">
+      <input type="text" name="prijs" placeholder="Voeg een prijs toe...">
       <input type="text" name="image" placeholder="Voeg een image toe...">
-      <button style="background-color: #428bca; margin-top: 20px;" type="submit" name="submit_button">Submit</button>
+      <button style="background-color: #7189FF; margin-top: 20px;" type="submit" name="submit_button">Submit</button>
     </form>
 </div>
 

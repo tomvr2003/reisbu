@@ -46,7 +46,7 @@ include("./components/header.php");
 ?>
 <div id="top-6">
     <div class="top-6-boxes-container" style="margin-bottom: 50px;">
-        <div class="top-6-box">
+        <a href="reispagina.php?id=<?php echo $row['id'];?>"><div class="top-6-box">
             <div class="top-6-box-left">
                 <img src="<?php echo $row["image"]; ?>" alt="place" class="top-6-img">
             </div>
@@ -65,7 +65,7 @@ include("./components/header.php");
                 <i class="fa-solid fa-message"></i>
                 <h3 class="rating-6"><?php echo $row["rating"]; ?></h3>
             </div>
-        </div>
+        </div></a>
     </div>
 </div>
 

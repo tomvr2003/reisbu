@@ -438,6 +438,7 @@ td{
 .reispagina-container {
   height: 90vh;
   display: flex;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
 }
 
 .reispagina-container-left {
@@ -447,6 +448,7 @@ td{
 .reispagina-container-right {
   flex: 6;
   padding: 100px 100px 100px 200px;
+  background-color: #ebebeb;
 }
 
 .reispagina-image {
@@ -458,9 +460,6 @@ td{
 .reispagina-container-right-1 {
   display: flex;
   height: 10vh;
-}
-
-.reispagina-container-right-2 {
 }
 
 .reispagina-container-right-3 {
@@ -490,6 +489,7 @@ td{
 
 .star-text-reispagina {
   font-size: 22px;
+  margin:-1px 0 0 5px;
 }
 
 .fa-m-2 {
@@ -506,7 +506,48 @@ td{
 }
 
 .reispagina-button {
-  padding: 12px 30px;
+  padding: 15px 50px;
   background-color: #7189FF;
 }
 
+.recensies-container {
+  height: 90vh;
+  margin-top: 10vh;
+}
+
+.recensies-top, .recensies-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.recensies-bottom-con {
+  width: 600px;
+  padding-top: 100px;
+}
+
+.recensie-bottom-con-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recensie-button {
+  padding: 15px 50px;
+  background-color: #7189FF;
+}
+
+.recensie-title {
+  font-size: 35px;
+}
+
+.recensie-text {
+  margin-top: 30px;
+  width: 600px;
+  overflow-wrap: break-word;
+}
+
+.blue-line {
+  height: 2px;
+  width: 100%;
+  background-color: #7189FF;
+  margin-top: 30px;
+}

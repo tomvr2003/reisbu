@@ -24,6 +24,7 @@ $reisbureauData = $statement->fetchAll(PDO::FETCH_ASSOC);
                     <th>Omschrijving</th>
                     <th>Star</th>
                     <th>Rating</th>
+                    <th>Prijs</th>
                     <th>Action</th>
                 </tr>
                 <?php foreach ($reisbureauData as $row) { ?>
@@ -45,6 +46,9 @@ $reisbureauData = $statement->fetchAll(PDO::FETCH_ASSOC);
                         </td>
                         <td data-th="Rating">
                             <?php echo $row['rating']; ?>
+                        </td>
+                        <td data-th="Prijs">
+                            <?php echo "€ " . $row['prijs']; ?>
                         </td>
                         <td data-th="Action">
                             <a href="delete.php?id=<?php echo $row['id']; ?>"><button style="background-color: red;">Delete Reis</button></a>
