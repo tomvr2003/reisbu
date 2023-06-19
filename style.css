@@ -494,6 +494,19 @@ td{
   .reispagina-container-right-6 {
     height: 6vh;
   }
+  .reispagina-container-right-1 {
+    display: flex;
+    height: 8vh;
+  }
+  .reispagina-container-right-3 {
+    display: flex;
+    height: 5vh;
+  }
+  .reispagina-container-right {
+  flex: 6;
+  padding: 80px 100px 100px 200px;
+  background-color: #ebebeb;
+}
 }
 
 .reispagina-container-right-7 {
@@ -582,7 +595,7 @@ td{
   max-width: 400px;
   margin: 100px auto;
   padding: 20px;
-  background-color: white;
+  background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -600,24 +613,52 @@ td{
 .form-group input[type="text"],
 .form-group textarea {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #cccccc;
+  padding: 10px;
+  border: 1px solid #dcdcdc;
   border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #7189FF;
 }
 
 .form-group textarea {
-  height: 80px;
+  height: 120px;
 }
 
 .form-group button {
   background-color: #7189FF;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .form-group button:hover {
   background-color: #5566CC;
+}
+
+/* Account boekingen */
+
+.account-boeking {
+  height: 220px;
+  width: 650px;
+}
+
+.account-boeking:hover {
+  height: 220px;
+  width: 650px;
+}
+
+.t-6-p {
+  margin-top: 15px;
+}
+
+.t6-box-padding {
+  padding: 0px 10px 0 0;
 }

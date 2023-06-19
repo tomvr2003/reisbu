@@ -3,6 +3,12 @@ session_start();
 include("./components/head.php");
 include("./components/header.php");
 
+  if (!isset($_SESSION["username"])) { 
+    echo "<center><h1 style='margin-top: 50px;'>Je moet ingelogd zijn om een bericht te sturen</h1><center>";
+    echo "<center><h3 style='margin-top: 20px;'><a style='text-decoration: underline; color: #3366CC;' href='./login.php'>Login</a></h3><center>";
+  } 
+  else {
+
 if (isset($_POST["submit_button"])) {
     $bericht = $_POST["bericht"];
     $onderwerp = $_POST["onderwerp"];
@@ -19,7 +25,6 @@ if (isset($_POST["submit_button"])) {
     header("Location: ./index.php");
     exit();
 }
-
 ?>
 
 <div class="container">
@@ -39,5 +44,6 @@ if (isset($_POST["submit_button"])) {
   </div>
 
 <?php
+  }
 include("./components/footer.php");
 ?>
