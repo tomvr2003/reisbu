@@ -39,7 +39,7 @@ include("./components/header.php");
 </div>
 
 <?php
-    $query = "SELECT * FROM reizen";
+    $query = "SELECT * FROM reizen LIMIT 6";
     $stmt = $conn->prepare($query);
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -69,9 +69,9 @@ include("./components/header.php");
     </div>
 </div>
 
-    <?php 
-      }
-    ?>
+<?php 
+    }
+?>
 
 
 <?php

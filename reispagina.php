@@ -10,6 +10,24 @@ $stmt = $conn->prepare($query);
 $stmt->bindParam(":id", $id);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if(isset($_POST['submit_button'])) {
+    $user_id = $_SESSION["id"];
+    $reis_id = $_GET["id"];
+    $datum = $_POST["datum"];
+  
+    $sql = "INSERT INTO boekingen (user_id, reis_id, datum) VALUES (:user_id, :reis_id, :datum)";
+    $statement = $conn->prepare($sql);
+    $statement->execute([
+        ":user_id" => $user_id,
+        ":reis_id" => $reis_id,
+        ":datum" => $datum
+    ]);
+    
+    header("Location:./index.php");
+    exit();
+  }
+
 ?>
 
 <div class="reispagina-container">
@@ -32,12 +50,14 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
         <div class="reispagina-container-right-4">
             <h6 style="font-weight: 500;" class="top-6-des"><?php echo $row["reisinfo"]; ?></h6>
         </div>
-        <div class="reispagina-container-right-5">
-            <input type="date" min="2023-06-23" max="2024-06-23" required>
-        </div>
-        <div class="reispagina-container-right-6">
-            <button class="reispagina-button">Boeken</button>
-        </div>
+        <form action="reispagina.php?id=<?php echo $_GET['id'];?>" method="POST">
+            <div class="reispagina-container-right-5">
+                <input type="date" min="2023-06-23" max="2024-06-23" name="datum" required>
+            </div>
+            <div class="reispagina-container-right-6">
+                <button type="submit" name="submit_button" class="reispagina-button">Boeken</button>
+            </div>
+        </form>
         <div class="reispagina-container-right-7">
             <h4 style="font-size: 40px;" class="top-6-title"><?php echo "€ " . $row["prijs"]; ?>,-</h4>
         </div>
@@ -46,7 +66,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 <div class="recensies-container">
     <div class="recensies-top">
-        <button class="recensie-button">Schrijf een recensie!</button>
+        <a href=""><button class="recensie-button">Schrijf een recensie!</button></a>
     </div>
     <div class="recensies-bottom">
         <div class="recensies-bottom-con">

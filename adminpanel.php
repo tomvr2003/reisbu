@@ -13,7 +13,7 @@ $reisbureauData = $statement->fetchAll(PDO::FETCH_ASSOC);
         <div class="add-reis-container">
             <a href="./add-reis.php"><button class="adminpanel-button">Add Reis</button></a>
             <a href="#"><button class="adminpanel-button">Boekingen</button></a>
-            <a href="#"><button class="adminpanel-button">Inbox</button></a>
+            <a href="./inbox.php"><button class="adminpanel-button">Inbox</button></a>
         </div>
         <table class="rwd-table">
             <tbody>
