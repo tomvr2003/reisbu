@@ -30,6 +30,8 @@ if(isset($_POST['submit_button'])) {
 
 ?>
 
+
+
 <div class="reispagina-container">
     <div class="reispagina-container-left">
         <img src="<?php echo $row["image"]; ?>" alt="reis" class="reispagina-image">

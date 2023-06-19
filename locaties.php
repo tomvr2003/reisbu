@@ -2,17 +2,28 @@
 session_start();
 include("./components/head.php");
 include("./components/header.php");
+
+if (isset($_POST['zoekveld']) && !empty($_POST['zoekveld'])) {
+    $zoekveld = $_POST['zoekveld'];
+    $stmt = $conn->prepare("SELECT * FROM `reizen` WHERE `title` LIKE ?");
+    $stmt->execute(["%$zoekveld%"]);
+}
+else {
+    $stmt = $conn->query("SELECT * FROM `reizen`");
+}
 ?>
 
 <div class="index-banner">
   <h1 class="banner-title">Locaties</h1>
 </div>
 
+<form class="search-bar-con" method="POST">
+    <input class="search-bar" name="zoekveld" type="text" placeholder="Zoek uw reis...">
+    <button class="search-button">Zoek</button>
+</form>
+
 <?php
-    $sql = 'SELECT * FROM reizen';
-    $statement = $conn->prepare($sql);
-    $statement->execute();
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 ?>
     <div id="top-6" style="margin-top: 50px;">
         <div class="top-6-boxes-container">
