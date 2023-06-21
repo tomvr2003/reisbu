@@ -40,15 +40,42 @@ use LDAP\Result;
                     }
                 }
             ?>
-            <form action="login.php" method="POST" class="login-form">
-                <h1 style="margin-bottom: 10px;" class="login-form-title">Login</h1>
-                <input type="text" name="username" placeholder="Gebruikersnaam of Email">
-                <input style="margin-bottom: 20px;" type="password" name="password" placeholder="Wachtwoord">
-                <button style="background-color: #7189FF; margin-bottom: 20px;" type="submit" name="login">Log in</button>
-            </form>
-            <p>Geen account? <a href="./register.php"><span class="register-text">Registreer</span></a></p>
-            <p style="margin-top: 10px;">Wachtwoord vergeten? <a href="#"><span class="register-text">Reset</span></a></p>
-        </div>
+        <form id="login-form" action="login.php" method="POST" class="login-form" onsubmit="return loginValidatie()">
+            <h1 style="margin-bottom: 10px;" class="login-form-title">Login</h1>
+            <input type="text" id="username" name="username" placeholder="Gebruikersnaam of Email">
+            <input style="margin-bottom: 20px;" type="password" id="password" name="password" placeholder="Wachtwoord">
+            <button style="background-color: #7189FF; margin-bottom: 20px;" type="submit" name="login">Log in</button>
+        </form>
+        <p>Geen account? <a href="./register.php"><span class="register-text">Registreer</span></a></p>
+        <p style="margin-top: 10px;">Wachtwoord vergeten? <a href="#"><span class="register-text">Reset</span></a></p>
+
+        <script>
+            function loginValidatie() {
+                var usernameInput = document.getElementById("username");
+                var passwordInput = document.getElementById("password");
+                var restrictedCharacters = /[!@#$%^&*]/;
+
+                if (restrictedCharacters.test(usernameInput.value.trim())) {
+                    alert("Gebruikersnaam kan niet deze karakters bevatten: !@#$%^&*");
+                    usernameInput.focus();
+                    return false;
+                }
+
+                if (usernameInput.value.trim() === "") {
+                    alert("Voer een geldige gebruikersnaam of email in");
+                    usernameInput.focus();
+                    return false;
+                }
+
+                if (passwordInput.value.trim() === "") {
+                    alert("Voer een wachtwoord in.");
+                    passwordInput.focus();
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
     </section>
 </main>
 

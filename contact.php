@@ -28,20 +28,47 @@ if (isset($_POST["submit_button"])) {
 ?>
 
 <div class="container" style="margin-bottom: 320px;">
-    <form action="contact.php" method="POST">
-    <div class="form-group">
-        <label for="message">Onderwerp:</label>
-        <input id="onderwerp" name="onderwerp" required>
+  <form action="contact.php" method="POST" onsubmit="return validateContactForm()">
+      <div class="form-group">
+          <label for="onderwerp">Onderwerp:</label>
+          <input id="onderwerp" name="onderwerp">
       </div>
       <div class="form-group">
-        <label for="message">Bericht:</label>
-        <textarea id="bericht" name="bericht" required></textarea>
+          <label for="bericht">Bericht:</label>
+          <textarea id="bericht" name="bericht"></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" name="submit_button">Verstuur</button>
+          <button type="submit" name="submit_button">Verstuur</button>
       </div>
-    </form>
+  </form>
   </div>
+
+  <script>
+    function validateContactForm() {
+        var onderwerpInput = document.getElementById("onderwerp");
+        var berichtInput = document.getElementById("bericht");
+
+        if (onderwerpInput.value.trim() === "") {
+            alert("Voer een onderwerp in.");
+            onderwerpInput.focus();
+            return false;
+        }
+
+        if (berichtInput.value.trim() === "") {
+            alert("Voer een bericht in.");
+            berichtInput.focus();
+            return false;
+        }
+
+        if (berichtInput.value.length < 50) {
+            alert("Het bericht moet minimaal 50 tekens bevatten.");
+            berichtInput.focus();
+            return false;
+        }
+
+        return true;
+    }
+  </script>
 
 <?php
   }

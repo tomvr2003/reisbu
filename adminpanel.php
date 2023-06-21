@@ -8,7 +8,7 @@ $statement = $conn->query($sql);
 $reisbureauData = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<main>
+<main style="height: 83vh">
     <div id="admin-full-page">
         <div class="add-reis-container">
             <a href="./add-reis.php"><button class="adminpanel-button">Add Reis</button></a>

@@ -4,7 +4,7 @@ require_once('connection.php');
 
 <header>
   <div class="header-left">
-    <img src="./assets/plane.png" alt="logo" class="logo">
+    <a class="logo-a" href="./index.php"><img src="./assets/plane.png" alt="logo" class="logo"></a>
   </div>
   <div class="header-center">
     <nav>

@@ -35,6 +35,12 @@ header {
   padding-left: 20px;
 }
 
+.logo-a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   height: 60%;
 }
@@ -130,8 +136,7 @@ input:focus {
 /* Boxes container */
 
 .boxes-container {
-  margin-top: 5vh;
-  height: 70vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -767,3 +772,47 @@ footer {
   font-weight: 700;
 }
 
+/* Responsive */
+
+@media only screen and (max-width: 900px) {
+  .header-center {
+    display: none;
+  }
+  .header-left, .header-right {
+    flex: 1;
+  }
+  .header-left {
+    justify-content: flex-start;
+  }
+  .header-right {
+    justify-content: flex-end;
+  }
+
+  .box, .box-2 , .box-3 {
+    width: 28%;
+  }
+
+  .top-6-box {
+    width: 600px;
+  }
+
+  .reispagina-container-right {
+    padding: 100px 0;
+  }
+
+  .reispagina-container-left {
+    display: none;
+  }
+
+  .reispagina-container-right-1, .reispagina-container-right-2, .reispagina-container-right-3, .reispagina-container-right-4, .reispagina-container-right-5, .reispagina-container-right-6 {
+    padding-left: 100px;
+  }
+
+  .reispagina-container-right-7 {
+    padding-right: 50px;
+  }
+
+  .over-description {
+    width: 600px;
+  }
+}

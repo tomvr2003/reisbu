@@ -3,12 +3,14 @@ session_start();
 include("./components/head.php");
 include("./components/header.php");
 if(isset($_SESSION['isadmin'])) {
-$sql = "SELECT * FROM contact c INNER JOIN login l ON c.user_id = l.id;";
+    $sql = "SELECT c.id AS contactid, c.onderwerp, c.bericht, l.username, l.email
+    FROM contact c
+    INNER JOIN login l ON c.user_id = l.id";
 $statement = $conn->query($sql);
 $reisbureauData = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<main>
+<main style="height: 83vh;">
     <div id="admin-full-page">
         <div class="add-reis-container">
             <a href="./adminpanel.php"><button class="adminpanel-button">Terug</button></a>
@@ -33,7 +35,7 @@ $reisbureauData = $statement->fetchAll(PDO::FETCH_ASSOC);
                             <?php echo $row['onderwerp']; ?>
                         </td>
                         <td data-th="Action">
-                            <a href="#"><button style="background-color: #7189FF;">Bekijk</button></a>
+                            <a href="./bericht.php?id=<?php echo $row["contactid"] ?>"><button style="background-color: #7189FF;">Bekijk</button></a>
                         </td>
                     </tr>
                 <?php } ?>

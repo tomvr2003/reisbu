@@ -16,21 +16,26 @@ include("./components/header.php");
   ?>
 </div>
 
+<form class="search-bar-con" method="POST" action="./locaties.php">
+    <input class="search-bar" name="zoekveld" type="text" placeholder="Zoek uw reis...">
+    <button class="search-button">Zoek</button>
+    <input type="hidden" name="submitted" value="true">
+</form>
+
+
 <div class="boxes-container">
   <div class="box">
-      <h1 style="font-size: 40px;" class="box-text">Zomer<br>Vakantie</h1>
-      <p style="margin: 50px 0;" class="box-text">Ontspan naar de zon</p>
-      <button class="box-button">Ontdek</button>
-  </div>
+      <h1 style="font-size: 40px;" class="box-text">Over<br>Ons</h1>
+      <p style="margin: 50px 0;" class="box-text">Leer meer over ons</p>
+      <a href="./over.php"><button class="box-button">Ontdek</button></a>  </div>
   <div class="box-2">
-      <h1 style="font-size: 40px;" class="box-text">Last<br>Minute</h1>
-      <p style="margin: 50px 0;" class="box-text">Laatste kans</p>
-      <button class="box-button">Ontdek</button>
-  </div>
+      <h1 style="font-size: 40px;" class="box-text">Locaties<br>Bekijken</h1>
+      <p style="margin: 50px 0;" class="box-text">Bekijk al onze locaties</p>
+      <a href="./locaties.php"><button class="box-button">Ontdek</button></a>  </div>
   <div class="box-3">
-      <h1 style="font-size: 40px;" class="box-text">Best<br>Sellers</h1>
-      <p style="margin: 50px 0;" class="box-text">Scoor de beste deals</p>
-      <button class="box-button">Ontdek</button>
+      <h1 style="font-size: 40px;" class="box-text">Contact</h1>
+      <p style="margin: 50px 0;" class="box-text">Neem contact met ons op</p>
+      <a href="./contact.php"><button class="box-button">Ontdek</button></a>
   </div>
 </div>
 
