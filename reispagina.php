@@ -5,7 +5,7 @@ include("./components/header.php");
 
 $id = $_GET["id"]; 
 
-$query = "SELECT * FROM reizen WHERE id = :id"; 
+$query = "SELECT *, reizen.id as reisid FROM reizen WHERE id = :id"; 
 $stmt = $conn->prepare($query);
 $stmt->bindParam(":id", $id);
 $stmt->execute();
@@ -68,18 +68,28 @@ if(isset($_POST['submit_button'])) {
 
 <div class="recensies-container">
     <div class="recensies-top">
-        <a href=""><button class="recensie-button">Schrijf een recensie!</button></a>
+        <a href="./recensie.php?id=<?php echo $row["reisid"]; ?>"><button class="recensie-button">Schrijf een recensie!</button></a>
     </div>
+    <?php 
+    $reis_id = $_GET["id"];
+    $sql = "SELECT * FROM recensie r INNER JOIN login l on r.user_id = l.id WHERE r.reis_id = :id";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([
+        ":id" => $reis_id
+    ]);
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    ?>
     <div class="recensies-bottom">
         <div class="recensies-bottom-con">
             <div class="recensie-bottom-con-top">
-                <h1>Tom</h1>
-                <h1 style="color: #7189FF;">9.5</h1>
+                <h1><?php echo $row["username"] ?></h1>
+                <h1 style="color: #7189FF;"><?php echo $row["rating"] ?> </h1>
             </div>
-            <p class="recensie-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="recensie-text"><?php echo $row["bericht"] ?></p>
             <div class="blue-line"></div>
         </div>
     </div>
+    <?php } ?>
 </div>
 
 <?php

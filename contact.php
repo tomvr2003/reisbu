@@ -5,7 +5,7 @@ include("./components/header.php");
 
   if (!isset($_SESSION["username"])) { 
     echo "<center><h1 style='margin-top: 50px;'>Je moet ingelogd zijn om een bericht te sturen</h1><center>";
-    echo "<center><h3 style='margin-top: 20px;'><a style='text-decoration: underline; color: #3366CC;' href='./login.php'>Login</a></h3><center>";
+    echo "<center><h3 style='margin-top: 20px; margin-bottom: 70vh;'><a style='text-decoration: underline; color: #3366CC;' href='./login.php'>Login</a></h3><center>";
   } 
   else {
 
@@ -27,7 +27,7 @@ if (isset($_POST["submit_button"])) {
 }
 ?>
 
-<div class="container">
+<div class="container" style="margin-bottom: 320px;">
     <form action="contact.php" method="POST">
     <div class="form-group">
         <label for="message">Onderwerp:</label>
