@@ -3,9 +3,7 @@ session_start();
 include("./components/head.php");
 include("./components/header.php");
 if(isset($_SESSION['isadmin'])) {
-$sql = "SELECT *,boekingen.id as boekingenid FROM boekingen 
-INNER JOIN reizen on reis_id = reizen.id
-INNER JOIN login on user_id = login.id";
+$sql = "SELECT * FROM login";
 $statement = $conn->query($sql);
 $reisbureauData = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -20,9 +18,7 @@ $reisbureauData = $statement->fetchAll(PDO::FETCH_ASSOC);
                 <tr>
                     <th>Naam</th>
                     <th>Email</th>
-                    <th>Bestemming</th>
-                    <th>Locatie</th>
-                    <th>Vertrekdatum</th>
+                    <th>Wachtwoord</th>
                     <th>Acties</th>
                 </tr>
                 <?php foreach ($reisbureauData as $row) { ?>
@@ -33,17 +29,11 @@ $reisbureauData = $statement->fetchAll(PDO::FETCH_ASSOC);
                         <td data-th="Email">
                             <?php echo $row['email']; ?>
                         </td>
-                        <td data-th="Title">
-                            <?php echo $row['title']; ?>
+                        <td data-th="Password">
+                            <?php echo $row['password']; ?>
                         </td>
-                        <td data-th="Omschrijving">
-                            <?php echo $row['omschrijving']; ?>
-                        </td>
-                        <td data-th="Datum">
-                            <?php echo $row['datum']; ?>
-                        </td>
-                        <td data-th="Acties">
-                            <a href="deleteBoeking.php?id=<?php echo $row['boekingenid']; ?>"><button style="background-color: #7189FF;">Delete Boeking</button></a>
+                        <td data-th="Verander">
+                            <a href="veranderWachtwoord.php?id=<?php echo $row['id']; ?>"><button style="background-color: #7189FF;">Verander Wachtwoord</button></a>
                         </td>
                     </tr>
                 <?php } ?>
